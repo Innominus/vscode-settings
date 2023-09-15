@@ -1,138 +1,65 @@
 {
-    "editor.tokenColorCustomizations": {
-      "functions": "#A0FF66",
-      "textMateRules": [
-        {
-          "scope": "meta.function-call.generic.python",
-          "settings": {
-            "foreground": "#8febeb"
-          }
-        },
-        {
-          "scope": "punctuation.brackets.angle.rust",
-  
-          "settings": {
-            "foreground": "#fab7b7"
-          }
-        },
-        {
-          "scope": "variable.other.rust",
-          "settings": {
-            "foreground": "#ffffff"
-          }
+  "workbench.colorTheme": "Prism",
+  "files.autoSave": "afterDelay",
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML",
+    "plaintext": "rust",
+    "rust": "rust"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "class=\"([^\"]*)",
+    "class={\"([^\"}]*)",
+    "class=format!({\"([^\"}]*)"
+  ],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.formatOnSave": true,
+  "emmet.includeLanguages": {
+    "rust": "html"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "punctuation.brackets.angle.rust",
+        "settings": {
+          "foreground": "#da14da"
         }
-      ]
-    },
-  
-    "editor.semanticTokenColorCustomizations": {
-      "[Dracula]": {
-        "rules": {
-          "consuming.public": "#cabfbf",
-          "variable": "#ffffff",
-          "variable.declaration": "#ffb876",
-          "variable.consuming": "#f8cfa0",
-          "namespace.library": "#A0FF66"
+      },
+      {
+        "scope": "keyword.other",
+        "settings": {
+          "foreground": "#b32bd2",
         }
       }
-    },
-  
-    "emmet.includeLanguages": {
-      "rust": "html"
-    },
-  
-    "python.pythonPath": "/usr/bin/python3.7",
-    "python.autoComplete.extraPaths": ["${workspaceFolder}/customModule"],
-    "python.linting.pylintPath": "pylint",
-    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
-    "python.linting.pylintEnabled": true,
-    "python.linting.pycodestyleArgs": ["--ignore=E501"],
-    "files.exclude": {
-      "**/*.pyc": true,
-      "**/.classpath": true,
-      "**/.project": true,
-      "**/.settings": true,
-      "**/.factorypath": true
-    },
-    "workbench.colorCustomizations": {
-    
-    },
-    "git.enableSmartCommit": true,
-    "workbench.colorTheme": "Dracula",
-    "python.languageServer": "Pylance",
-    "python.analysis.extraPaths": ["${workspaceFolder}/customModule"],
-    "window.zoomLevel": 0,
-    "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
-    "julia.enableTelemetry": true,
-    "files.autoSave": "afterDelay",
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.requireConfig": true,
-  
-    "tailwindCSS.includeLanguages": {
-      "javascript": "javascript",
-      "html": "HTML",
-      "plaintext": "rust",
-      "rust": "rust"
-    },
-  
-    "tailwindCSS.experimental.classRegex": [
-      "class=\"([^\"]*)", 
-      "class={\"([^\"}]*)"
+    ]
+  },
+  "rust-analyzer.check.command": "clippy",
+  "editor.fontFamily": "'Fira Code'",
+  "rust-analyzer.procMacro.ignored": {
+    "leptos_macro": [
+      "server",
+      "component"
     ],
-  
-    "html-css-class-completion.HTMLLanguages": [
-      "html",
-      "vue",
-      "razor",
-      "blade",
-      "handlebars",
-      "twig",
-      "django-html",
-      "php",
-      "markdown",
-      "erb",
-      "ejs",
-      "svelte",
-      "rust",
-      "*.rs"
-    ],
-  
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "[dart]": {
-      "editor.defaultFormatter": "Dart-Code.dart-code",
-      "editor.formatOnSave": true,
-      "editor.formatOnType": true,
-      "editor.rulers": [80],
-      "editor.selectionHighlight": false,
-      "editor.suggest.snippetsPreventQuickSuggestions": false,
-      "editor.suggestSelection": "first",
-      "editor.tabCompletion": "onlySnippets",
-      "editor.wordBasedSuggestions": false
-    },
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/squashfs-root/usr/bin/nvim",
-    "jupyter.textOutputLimit": 0,
-    "editor.fontLigatures": null,
-    "editor.codeActionsOnSave": null,
-    "redhat.telemetry.enabled": false,
-    "dart.previewFlutterUiGuidesCustomTracking": true,
-    "dart.previewFlutterUiGuides": true,
-    "cmake.configureOnOpen": false,
-    "python.defaultInterpreterPath": "/usr/bin/python3.7",
-    "[rust]": {
-      "editor.defaultFormatter": "statiolake.vscode-rustfmt"
-    },
-    "tabnine.experimentalAutoImports": true,
-  
-    "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs": "active",
-    "svelte.enable-ts-plugin": true,
-    "C_Cpp.updateChannel": "Insiders",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "files.associations": {
-      "*.rs": "rust"
-    }
-  }
-  
+  },
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "cmd": "~/.cargo/bin/leptosfmt '${file}'",
+        "match": "\\.rs$"
+      }
+    ]
+  },
+  "files.autoSaveDelay": 5000,
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "info"
+  ],
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "editor.inlayHints.fontSize": 13
+}
